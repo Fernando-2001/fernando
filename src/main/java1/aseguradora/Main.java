@@ -1,5 +1,8 @@
 package aseguradora;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -19,6 +22,10 @@ public class Main {
 		System.out.println("5.SALIR");
 		System.out.println("Seleccione su opción: ");
 		op = in.nextInt();
+		
+        List<Poliza> listBan = new ArrayList<Poliza>();
+			
+		
 		switch (op) {
 		case 1:
 			System.out.println("a. Póliza general");
@@ -27,6 +34,7 @@ public class Main {
 			String opcion = in.next();
 		switch (opcion) {
 		case "a":
+			for (int i = 0; i<3;i++) {
 			System.out.println("Ingrese el nombre: ");
 			String nombre = in.next();
 			System.out.println("Ingrese la descripción: ");
@@ -41,8 +49,17 @@ public class Main {
 			String codigoDescuento = in.next();
 			System.out.println("Numero de seguro: ");
 			String numeroSeguro = in.next();
+			
+				Poliza poliza = new Poliza();
+				poliza.setNombre(nombre);
+				poliza.setAnioVigencia(anioVigencia);
+				poliza.setCodigoPoliza(codigoPoliza);
+				poliza.setValor(valorPoliza);
+				listBan.add(poliza);
+			}
 			break;
 		case "b": 
+			for (int i = 0; i<3;i++) {
 			System.out.println("Ingrese el nombre: ");
 			String nombre2 = in.next();
 			System.out.println("Ingrese la descripción: ");
@@ -55,6 +72,14 @@ public class Main {
 			int valorPoliza2 = in.nextInt();
 			System.out.println("Beneficio: ");
 			String beneficio = in.next();
+			
+			Poliza poliza = new Poliza();
+			poliza.setNombre(nombre2);
+			poliza.setAnioVigencia(anioVigencia2);
+			poliza.setCodigoPoliza(codigoPoliza2);
+			poliza.setValor(valorPoliza2);
+			listBan.add(poliza);
+		}
 			break;
 		}
 		default:
@@ -63,13 +88,30 @@ public class Main {
 		case 2:
 			System.out.println("Ingrese el codigo de la póliza: ");
 			String codigoPoliza = in.next();
+			
+			
 		break;
 		case 3:
+			System.out.println("Ingrese el codigo de la póliza: ");
+			String codigoPoliza2 = in.next();
+		
+		break;
+		case 4:
+			Poliza poli = listBan.get(0);
+			System.out.println(poli);
 			
+			
+			for (int i=0; i<listBan.size();i++) {
+				Poliza poli1 = listBan.get(i);
+				System.out.println(poli1);
+			}		
+		break;
+		case 5:
+			System.out.println("Cerrando el sistema...");
 		}
 		
 		}while (op!= 5);
-		
+		System.out.println("Gracia por prefrirnos");
 		
 	}
 
