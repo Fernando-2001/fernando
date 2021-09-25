@@ -82,13 +82,13 @@ public class Main {
 		}
 			break;
 		}
-		default:
-		System.out.println("opcion no valida");
 		break;
 		case 2:
 			System.out.println("Ingrese el codigo de la póliza: ");
 			String codigoPoliza = in.next();
-			
+			if(codigoPoliza==codigoPoliza) {
+				
+			}
 			
 		break;
 		case 3:
